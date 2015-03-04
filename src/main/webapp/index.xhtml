@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+	<h1></h1>
+	<p:layout fullpage="true" style="min-width:400px;min-height:500px;">
+
+		<p:layoutUnit position="north" size="50">
+			<h:outputText value="Top content." />
+		</p:layoutUnit>
+		<p:layoutUnit position="south" resizable="true" size="100">
+			<h:outputText value="Bottom content." />
+		</p:layoutUnit>
+		<p:layoutUnit position="west" resizable="true" size="100" minSize="40"
+			maxSize="200">
+			<h:outputText value="Left content" />
+		</p:layoutUnit>
+		<p:layoutUnit position="east" resizable="true" size="200">
+			<h:outputText value="Right Content" />
+		</p:layoutUnit>
+		<p:layoutUnit position="center">
+			<h:outputText value="Center Content" />
+			<h:form>
+				<p:editor value="#{editor.value}" />
+				<p:growl id="growl" life="2000" />
+
+				<p:commandButton value="Ajax Submit" id="ajax" update="growl"
+					actionListener="#{editor.buttonAction}"
+					styleClass="ui-priority-primary" />
+
+			</h:form>
+
+		</p:layoutUnit>
+	</p:layout>
+	<p:commandButton value="Ajax Submit" styleClass="ui-icon-start" />
+
+</h:body>
+</html>
