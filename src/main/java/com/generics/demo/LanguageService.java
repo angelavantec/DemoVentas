@@ -16,6 +16,7 @@ public class LanguageService {
 		
 		List<Language> list = new ArrayList<Language>();
 		Language lang = new Language();
+		lang.setId(1);
 		lang.setName("Angel");
 		Date date = new Date();
 		lang.setBirthday(new Timestamp(date.getTime()));		
@@ -23,6 +24,7 @@ public class LanguageService {
 		list.add(lang);
 		
 		lang = new Language();
+		lang.setId(2);
 		lang.setName("Generics");
 		date = new Date();
 		lang.setBirthday(new Timestamp(date.getTime()));		

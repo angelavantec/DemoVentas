@@ -30,4 +30,7 @@ public class BasicView {
 		this.service = service;
 	}	
 	
+	public void editAction(Language lang) {	    
+		System.out.println(lang.getId());		
+	}
 }

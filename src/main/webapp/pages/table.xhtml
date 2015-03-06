@@ -30,6 +30,11 @@
 					<p:column headerText="Birthday">
 						<h:outputText value="#{lang.birthday}" />
 					</p:column>
+					<p:column>    				
+	    				<h:commandLink value="Edit" action="#{dtTableView.editAction(lang)}">
+	    					<f:ajax  execute="@all"/>   				
+	    				</h:commandLink>
+    				</p:column>
 				</p:dataTable>
 			</h:form>
 
