@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="f"  uri="http://java.sun.com/jsf/core"%>
 <%@ taglib prefix="h"  uri="http://java.sun.com/jsf/html"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +36,9 @@
 <div id="slider1_container" style="position: relative; top: 0px; left: 0px; width: 600px; height: 300px;">
     <!-- Slides Container -->
     <div u="slides" style="cursor: move; position: absolute; overflow: hidden; left: 0px; top: 0px; width: 600px; height: 300px;">
-        <div>                <div class="col-lg-3 col-md-6">
+        <div>  
+           <c:forEach var="item" items="#{editor.lenguajes}">           
+        		<div class="col-lg-3 col-md-6">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <div class="row">
@@ -44,7 +47,7 @@
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge">26</div>
-                                    <div><h:outputText value="#{editor.value}" /></div>
+                                    <div><h:outputText value="#{item.nombreLenguaje}" /></div>
                                 </div>
                             </div>
                         </div>
@@ -56,7 +59,9 @@
                             </div>
                         </a>
                     </div>
-                </div></div>
+                </div>
+             </c:forEach>   
+        </div>
         <div>                <div class="col-lg-3 col-md-6">
                     <div class="panel panel-primary">
                         <div class="panel-heading">

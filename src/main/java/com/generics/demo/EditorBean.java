@@ -1,5 +1,7 @@
 package com.generics.demo;
  
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.application.FacesMessage;
@@ -23,14 +25,18 @@ public class EditorBean {
 		System.out.println("X");
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("ventas");
 		EntityManager em = emf.createEntityManager();
-		GencoLenguaje leng = new GencoLenguaje();
-		leng = (GencoLenguaje) em.createQuery("select u from GencoLenguaje u").getResultList().get(0);
-		System.out.println(leng.getNombreLenguaje());		
-		this.value =  leng.getNombreLenguaje();	
+		lenguajes = (List<GencoLenguaje>) em.createQuery("select u from GencoLenguaje u").getResultList();
+		System.out.println(lenguajes.get(0).getNombreLenguaje());		
+						
 	}
 	
 	private String value = "This editor is provided by PrimeFaces";
- 
+	private List<GencoLenguaje> lenguajes;
+	
+	public List<GencoLenguaje> getLenguajes() {
+		return lenguajes;
+	}
+	
 	public String getValue() {
 		
 		return value;
